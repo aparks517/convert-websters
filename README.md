@@ -5,7 +5,7 @@ Convert Webster's Unabridged Dictionary from Project Gutenberg to OSX dictionary
 
 ## Overview
 
-After reading Jason Somers' [excellent article][jsomersDictionary] about
+After reading James Somers' [excellent article][jsomersDictionary] about
 the differences in quality between dictionaries, I was prompted to follow
 his method for getting Webster's 1913 into Dictionary.app.
 

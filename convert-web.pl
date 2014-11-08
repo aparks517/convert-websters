@@ -14,10 +14,10 @@ my $max_words = shift || 0;
 # read
 my @entries = do('read.pl');
 
-# build word index and list
-# the word index has the words as keys and arrayrefs of entry indices as values
-# the word list is a list of all of the words in the order of first entry
-my(@word_list, %word_index);
+# build word list and entry index
+# the word list is a list of all of the (unique) words in the order of first entry
+# the entry index has the words as keys and arrayrefs of entry indices as values
+my(@word_list, %entry_index);
 for (my $i = 0; $i < scalar(@entries); $i++){
 	# headword
 	my $headword = $entries[$i]->{headword};
@@ -25,13 +25,13 @@ for (my $i = 0; $i < scalar(@entries); $i++){
 	# word (lowercased, used as index)
 	my $word = lc($headword);
 
-	# if the word is already in the word index, add this entry to the
-	# word index.  otherwise, add the word to the word index and word
+	# if the word is already in the entry index, add this entry to the
+	# entry index.  otherwise, add the word to the entry index and word
 	# list
-	if (defined($word_index{$word})){
-		push @{$word_index{$word}}, $i;
+	if (defined($entry_index{$word})){
+		push @{$entry_index{$word}}, $i;
 	} else {
-		$word_index{$word} = [$i];
+		$entry_index{$word} = [$i];
 		push @word_list, $word;
 	}
 }
@@ -64,7 +64,7 @@ for my $word (@word_list){
 	print WORD "<!-- \$title $encoded_word -->\n<!-- \@include _word_header -->\n";
 
 	# iterate entries
-	for my $i (@{$word_index{$word}}){
+	for my $i (@{$entry_index{$word}}){
 		# entry 
 		my $entry = $entries[$i];
 

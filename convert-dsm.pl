@@ -24,6 +24,7 @@ for (my $i = 0; $i < scalar(@entries); $i++){
 
   # headword
   my $headword = encode_entities($entry->{headword}, $unsafe_characters);
+  $headword =~ s/&#39;/&apos;/g;
 
   # emit entry open tag
   print "<d:entry id='entry$i' d:title='$headword'>\n";

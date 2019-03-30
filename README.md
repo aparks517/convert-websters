@@ -19,19 +19,13 @@ To get something more like what I was looking for, I started with a copy of
 wrote this script to convert it to the XML that Apple's Dictionary Development
 Kit takes as input.
 
-In addition to the convert-dsm.pl script for making XML, I wrote the  convert-
-web.pl script to produce the word and index files required for a static website.
-The other parts needed for a static site (client-side search, mostly) have their
-own [repository][dictionarySiteRepo].
-
 ## If you just want the results
 
 If you don't care to run the script yourself and just want the finished
 dictionary, you can download an [installer package][installerPackage] that will
-put the finished dictionary in ~/Library/Dictionaries for you.
+put the finished dictionary in \~/Library/Dictionaries for you.
 
-If you'd prefer to view the dictionary as a [static web site][staticSite] you
-can do that too.
+There's also an [iOS app][app].
 
 ## Prerequisites
 
@@ -54,6 +48,5 @@ Development Kit project at ../ddk_project, this should do the trick:
 [jsomersDictionary]: http://jsomers.net/blog/dictionary
 [gutenbergWebsters]: http://www.gutenberg.org/ebooks/29765
 [developerDownloads]: https://developer.apple.com/downloads/index.action
-[installerPackage]: http://dictionary.parksdigital.com/Webster%27s%20Unabridged%20Dictionary.pkg
-[staticSite]: http://dictionary.parksdigital.com/
-[dictionarySiteRepo]: https://github.com/aparks517/dictionary-site
+[installerPackage]: http://parksdigital.com/Webster%27s%20Unabridged%20Dictionary.pkg
+[app]: https://itunes.apple.com/app/id943993346
